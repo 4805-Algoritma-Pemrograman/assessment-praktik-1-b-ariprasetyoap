@@ -1,25 +1,23 @@
+
 public class Nomor1{
     public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
+       Scanner input = new Scanner(System.in);
 
-        // Input total penjualan
         System.out.print("Masukkan total penjualan salesman: ");
-        double totalPenjualan = scanner.nextDouble();
+        double totalPenjualan = input.nextDouble();
+
         double komisi;
 
-        // Menghitung komisi
         if (totalPenjualan <= 500000) {
-            komisi = totalPenjualan * 0.10; // 10% untuk penjualan <= Rp 500.000
+            komisi = totalPenjualan * 0.10; 
         } else {
-            double komisiPertama = 500000 * 0.10; // 10% untuk Rp 500.000 pertama
-            double sisaPenjualan = totalPenjualan - 500000;
-            double komisiSisa = sisaPenjualan * 0.15; // 15% untuk sisa penjualan
-            komisi = komisiPertama + komisiSisa;
+            double komisi500k = 500000 * 0.10; 
+            double komisiSisanya = (totalPenjualan - 500000) * 0.15; 
+            komisi = komisi500k + komisiSisanya;
         }
 
-        // Menampilkan hasil
-        System.out.printf("Total penjualan salesman: %.0f%n", totalPenjualan);
-        System.out.printf("Komisi yang didapatkan = %.1f%n", komisi);
+        System.out.println("Total penjualan salesman: " + totalPenjualan);
+        System.out.println("Komisi yang didapatkan = " + komisi);
     }
 }
 
@@ -35,5 +33,6 @@ Hitung komisi untuk sisa penjualan = sisa penjualan * 15%.
 Total komisi = komisi untuk Rp 500.000 + komisi untuk sisa penjualan.
 Tampilkan total penjualan dan komisi yang didapat.
 Selesai.
+    
 
 
