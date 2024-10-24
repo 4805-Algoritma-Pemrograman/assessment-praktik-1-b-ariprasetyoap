@@ -1,5 +1,10 @@
-public class Nomor2{
-    public static void main(String[] args){
+import java.util.Scanner;
+import java.text.NumberFormat;
+import java.util.Locale;
+import java.util.InputMismatchException;
+
+public class Nomor2 {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         NumberFormat currencyFormatter = NumberFormat.getCurrencyInstance(new Locale("id", "ID"));
 
