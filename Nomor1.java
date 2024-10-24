@@ -1,29 +1,37 @@
+import.java.until.Scanner;
 
 public class Nomor1{
-    public static void main(String[] args){
-      Scanner scanner = new Scanner(System.in);
+public static void main(String[] args){
+Scanner scanner = new Scanner(System.in);
+        
+System.out.print("Masukkan total penjualan salesman: ");
+ double totalPenjualan = scanner.nextDouble();
+        
+ 
+    double komisi = 0.0;
 
-        // Input total penjualan
-        System.out.print("Masukkan total penjualan salesman: ");
-        double totalPenjualan = scanner.nextDouble();
-        double komisi;
-
-        // Menghitung komisi
-        if (totalPenjualan <= 500000) {
-            komisi = totalPenjualan * 0.10; // 10% untuk penjualan <= Rp 500.000
-        } else {
-            double komisiPertama = 500000 * 0.10; // 10% untuk Rp 500.000 pertama
-            double sisaPenjualan = totalPenjualan - 500000;
-            double komisiSisa = sisaPenjualan * 0.15; // 15% untuk sisa penjualan
-            komisi = komisiPertama + komisiSisa;
+ // Menghitung komisi
+    if (totalPenjualan <= 500000) {
+  komisi = totalPenjualan * 0.10;
+ } else {
+ // Komisi untuk Rp 500.000 pertama
+         komisi = 500000 * 0.10;
+ // Menghitung sisa penjualan
+        double sisaPenjualan = totalPenjualan - 500000;
+  // Komisi untuk sisa penjualan
+         komisi += sisaPenjualan * 0.15;
         }
-
-        // Menampilkan hasil
-        System.out.printf("Total penjualan salesman: %.0f%n", totalPenjualan);
-        System.out.printf("Komisi yang didapatkan = %.1f%n", komisi);
+  System.out.printf("Total penjualan salesman: %.0f\n", totalPenjualan);
+  System.out.printf("Komisi yang didapatkan = %.1f\n", komisi);
+        
+  scanner.close();
+        
     }
 }
 
+        
+
+       
 Algoritma
 Mulai.
 Input total penjualan salesman.
